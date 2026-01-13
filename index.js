@@ -14,9 +14,16 @@ newDeckBtn.addEventListener("click", () => {
 
 //Draw the cards
 drawCardBtn.addEventListener("click", () => {
-  fetch(`https://apis.scrimba.com/deckofcards/api/deck/${deckId}/draw/?count=2`)
-    .then((res) => res.json())
-    .then((data) => {
-      console.log("Cards drawn:", data.cards);
-    });
+  if (deckId) {
+    fetch(
+      `https://apis.scrimba.com/deckofcards/api/deck/${deckId}/draw/?count=2`
+    )
+      .then((res) => res.json())
+      .then((data) => {
+        console.log(data.cards);
+      });
+  } else {
+    console.error("No deck ID found! Click 'Get New Deck' first.");
+    alert("Please get a new deck before drawing cards!");
+  }
 });
