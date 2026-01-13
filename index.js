@@ -1,3 +1,5 @@
+let deckId;
+
 const newDeckBtn = document.getElementById("new-deck");
 
 function handleClick() {
@@ -5,6 +7,8 @@ function handleClick() {
     .then((response) => response.json())
     .then((data) => {
       console.log(data);
+
+      deckId = data.deck_id;
     });
 }
 
