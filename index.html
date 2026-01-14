@@ -1,17 +1,16 @@
-<html>
-  <head>
-    <link rel="stylesheet" href="index.css" />
-  </head>
-  <body>
-    <main>
-      <h1>Card Game</h1>
-      <div id="cards-container"></div>
-      <div class="button-container">
-        <button id="new-deck">New Deck</button>
-        <button id="draw-cards">Draw Cards</button>
-      </div>
-    </main>
+<main>
+  <div class="top-row">
+    <button id="new-deck">Shuffle Deck</button>
+    <h4 id="remaining-cards">Remaining cards: 52</h4>
+  </div>
 
-    <script src="index.js"></script>
-  </body>
-</html>
+  <h2>War!</h2>
+
+  <h3>Computer: <span id="computer-score">0</span></h3>
+  <div id="computer-card-slot" class="card-slot"></div>
+
+  <div id="player-card-slot" class="card-slot"></div>
+  <h3>Me: <span id="player-score">0</span></h3>
+
+  <button id="draw-cards" class="draw-btn">Draw</button>
+</main>
