@@ -20,12 +20,19 @@ drawCardBtn.addEventListener("click", () => {
     )
       .then((res) => res.json())
       .then((data) => {
-        const cardsContainer = document.getElementById("cards-container");
+        document.getElementById(
+          "remaining-cards"
+        ).textContent = `Remaining cards: ${data.remaining}`;
 
-        cardsContainer.innerHTML = `
-            <img src="${data.cards[0].image}" class="card" />
-            <img src="${data.cards[1].image}" class="card" />
-        `;
+        //First card
+        document.getElementById("computer-card-slot").innerHTML = `
+                    <img src="${data.cards[0].image}" />
+                `;
+
+        //Second card
+        document.getElementById("player-card-slot").innerHTML = `
+                    <img src="${data.cards[1].image}" />
+                `;
       });
   } else {
     console.error("No deck ID found! Click 'Get New Deck' first.");
