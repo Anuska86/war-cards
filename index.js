@@ -20,7 +20,12 @@ drawCardBtn.addEventListener("click", () => {
     )
       .then((res) => res.json())
       .then((data) => {
-        console.log(data.cards);
+        const cardsContainer = document.getElementById("cards-container");
+
+        cardsContainer.innerHTML = `
+            <img src="${data.cards[0].image}" class="card" />
+            <img src="${data.cards[1].image}" class="card" />
+        `;
       });
   } else {
     console.error("No deck ID found! Click 'Get New Deck' first.");
